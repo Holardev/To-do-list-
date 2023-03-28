@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,600&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Awesome To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">
+Sign up
+Ayodelearog
+/
+Todo-List-App
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Todo-List-App/styles.css
+@Ayodelearog
+Ayodelearog fix smal input text size
+ 1 contributor
+191 lines (157 sloc)  3.55 KB
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background-image:  linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+    width: 40%;
+    margin: auto;
+
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(7.3px);
+    backdrop-filter: blur(7.3px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 2rem;
+}
+
+form > #task-input{
+    width: 65%;
+    height: 60%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+    padding-left: .5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#task-input::placeholder {
+    opacity: 1;
+    font-size: 1rem;
+}
+
+form > #add-task-btn {
+    width: 25%;
+    height: 60%;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    
+    background:#004d7adb;
+    margin-left: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    max-width: 50vw;
+    width: max-content;
+    margin: auto;
+    
+}
+
+.todo-list {
+    max-width: 95%;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: .8rem;
+    padding: 1rem;
+
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(7.3px);
+    backdrop-filter: blur(7.3px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.todo-item {
+    padding: .4rem .5rem;
+    line-height: 1.5rem;
+    margin-right: 1rem; 
+    width: 70%;
+    list-style-type: none;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    min-height: 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.todo > button {
+    width: 5rem;
+    height: 2rem;
+    margin-left: .5rem;
+    border-radius: .5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#add-task-btn {
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+
+button:hover, #add-task-btn:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+}
+
+.todo > .done-btn {
+    background-color:#008793;
+    color: white;
+}
+
+.todo > .delete-btn {
+    background-color: red;
+    color: white;
+
+}
+
+.see-more-btn {
+    position: absolute;
+    top: 2rem;
+    left: 24rem;
+}
+
+.done {
+    text-decoration: line-through;
+    /* background-color: rgba(0, 127, 85, 0.8); */
+    color: rgba(255, 255, 255, 0.597);
+}
+
+.delete-task {
+    transform: skewX(100);
+    transition: all .4 ease-in-out;
+}
+
+.see-more {
+    overflow: visible;
+    white-space: normal;
+}
+</style></head>
+<body>
+
+    <header>
+        <h1>My To-Do List App</h1>
+    </header>
+
+    <form action="">
+        <input type="text" title="task-input" placeholder="Enter Your Task" id="task-input">
+        <input type="submit" value="Add Task" id="add-task-btn">
+    </form>
+
+    <div class="todo-container">
+        <ul class="todo-list">
+
+        </ul>
+    </div>
+    
+    
+
+
+    <script src="index.js"></script>
+
+<script type="text/javascript" id="dcoder_script">"use strict";
+
+const addTaskEl = document.getElementById("add-task-btn");
+const taskInputEl = document.getElementById("task-input");
+const todoList = document.querySelector(".todo-list");
+
+
+
+// Adds taks to the list
+const addTask = function (e) {
+    e.preventDefault();
+    const todoDiv = document.createElement("div");
+    todoDiv.classList.add("todo");
+    const newTodo = document.createElement("li");
+    newTodo.addEventListener("click", seeMore);
+    newTodo.innerHTML = taskInputEl.value;
+    newTodo.classList.add("todo-item");
+    todoDiv.appendChild(newTodo);
+
+    // const seeMore = document.createElement("span");
+    // seeMore.addEventListener("click", seeMore);
+    // seeMore.innerText ="See More";
+    // seeMore.classList.add("see-more-btn");
+    // newTodo.appendChild(seeMore);
+
+    const doneBtnEl = document.createElement("button");
+    doneBtnEl.addEventListener("click", doneTask);
+    doneBtnEl.innerHTML = "Done";
+    doneBtnEl.classList.add("done-btn");
+    todoDiv.appendChild(doneBtnEl);
+
+    const deleteBtnEl = document.createElement("button");
+    deleteBtnEl.addEventListener("click", deleteTask);
+    deleteBtnEl.innerHTML = "Delete";
+    deleteBtnEl.classList.add("delete-btn");
+    todoDiv.appendChild(deleteBtnEl);
+
+    todoList.appendChild(todoDiv);
+    taskInputEl.value = "";
+    
+}
+addTaskEl.addEventListener("click", addTask);
+
+
+
+// Deletes tasks from the list
+const deleteTask = function (e) {
+    e.preventDefault()
+    e.target.parentElement.remove();
+}
+
+
+// Marks task as done by strikethrough
+const doneTask = function (e) {
+    e.preventDefault()
+    e.target.parentElement.childNodes[0].classList.add("done");
+}
+
+
+// opens the textbox to reveal content that overfow
+const seeMore = function(e) {
+    e.preventDefault();
+    e.target.classList.toggle("see-more");
+}</script></body></html>
